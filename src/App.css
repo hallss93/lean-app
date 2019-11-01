@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+  height: -webkit-fill-available;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .App-logo {
@@ -19,4 +22,8 @@
 
 .App-link {
   color: #09d3ac;
+}
+body {
+  margin: 0;
+  font-family: "Roboto", Verdana, sans-serif;
 }

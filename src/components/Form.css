@@ -1,0 +1,21 @@
+.form {
+  flex: 0 0 33.333333%;
+  max-width: 33.333333%;
+
+  max-width: 100%;
+
+  min-width: 350px;
+  background: white;
+  right: 0px;
+}
+.form-itens {
+  display: grid;
+}
+.form-item{
+  padding: 20px;
+}
+h1,
+label {
+  color: #999999;
+  font-weight: 400;
+}

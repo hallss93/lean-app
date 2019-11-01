@@ -1,0 +1,37 @@
+.outer-box {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+}
+.container {
+  flex: 0 0 66.666667%;
+  max-width: 66.666667%;
+}
+.img-overlay {
+  background: linear-gradient(#2179b5, #40c8f4);
+  height: 100%;
+  width: 100%;
+  opacity: 0.9;
+  top: 0;
+  left: 0;
+  position: absolute;
+  padding: 0;
+}
+.img-background {
+  background-image: url(./../assets//img/bg.jpg);
+  background-color: white;
+  background-size: auto 100%;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/* 
+ * media screen for specific width screen
+ */
+@media screen and (min-width: 1500px) {
+  .img-background {
+    background-size: 100% 100%;
+  }
+}
