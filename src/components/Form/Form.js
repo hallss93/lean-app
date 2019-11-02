@@ -21,7 +21,8 @@ function Form() {
   }
   function Validate() {
     if (nomeValid && emailValid && cpfValid && telefoneValid) {
-      alert("valido")
+      let user = { nome, email, cpf, telefone, date: new Date().getTime() }
+      window.localStorage.setItem("user", JSON.stringify(user))
     }
   }
 
@@ -32,7 +33,7 @@ function Form() {
     setEmailValid(true);
     setCPFValid(true);
     setTelefoneValid(true);
-    
+
     if (nome.length < 6) {
       setNomeValid(false);
       valid = false;

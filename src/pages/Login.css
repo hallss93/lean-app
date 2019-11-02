@@ -35,3 +35,26 @@
     background-size: 100% 100%;
   }
 }
+
+@media screen and (max-width: 992px) {
+  .container {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .img-background {
+    background-size: 100%;
+  }
+
+  .outer-box {
+    height: 300px;
+  }
+}
+
+
+@media screen and (max-width: 576px) {
+
+  .outer-box {
+    height: 200px;
+  }
+}
