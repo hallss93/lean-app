@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import InputMask from 'react-input-mask';
 
 import './Form.css';
+const { animateOut } = require('./../../assets/js/animate')
 
 function Form() {
   const [nome, setNome] = useState("");
@@ -28,6 +29,8 @@ function Form() {
 
   function submitValidate(event) {
     event.preventDefault();
+    animateOut()
+
     let valid = true
     setNomeValid(true);
     setEmailValid(true);
@@ -115,8 +118,14 @@ function Form() {
             {small(telefoneValid, 'Digite um Telefone válido!')}
           </div>
           <div className="form-item">
-            <button onClick={submitValidate}>Cadastrar</button>
-            <label>Login</label>
+            <div className="containerButtons">
+              <div>
+                <button onClick={submitValidate}>Cadastrar</button>
+              </div>
+              <div className="loginButton">
+                <label>Login</label>
+              </div>
+            </div>
           </div>
         </div>
 

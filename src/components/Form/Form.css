@@ -1,9 +1,8 @@
 .form {
+  transition: all 1s;
   flex: 0 0 33.333333%;
   max-width: 33.333333%;
-
   max-width: 100%;
-
   min-width: 300px;
   background: white;
   right: 0px;
@@ -26,19 +25,52 @@ label {
 .validate-error {
   color: red;
 }
+button {
+  cursor: pointer;
+  width: 180px;
+  border-radius: 50px;
+  height: 39px;
+  border: none;
+  color: #ffffff;
+  background: #40c8f4;
+}
+button:disabled {
+  color: #dddcdc;
+  background: #f6f6f6;
+}
+button:hover {
+  opacity: 0.7;
+}
 input {
-  border-bottom: 2px solid #ddd;
+  border-bottom: 2px solid #dbdbdb;
   border-top: none;
   border-left: none;
   height: 29px;
+  color: #efeeed;
   border-right: none;
   font-size: 15px;
+}
+.loginButton {
+  padding: 10px;
+}
+.loginButton > label{
+  cursor: pointer;
+}
+input:focus {
+  color: #555555;
+}
+.containerButtons {
+  display: flex;
+}
+.containerButtons > div {
+  width: 50%;
 }
 
 @media screen and (max-width: 992px) {
   .form {
-    flex: 100%;
-    max-width: 100%;
+    flex: inherit;
+    max-width: auto;
+    min-width: 100%;
   }
   .form-itens {
     padding: 0px 200px;
@@ -46,14 +78,12 @@ input {
 }
 
 @media screen and (max-width: 720px) {
-
   .form-itens {
     padding: 0px 100px;
   }
 }
 
 @media screen and (max-width: 576px) {
-
   .form-itens {
     padding: 0px 50px;
   }
