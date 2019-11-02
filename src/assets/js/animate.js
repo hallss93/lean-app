@@ -32,6 +32,22 @@ const animateOut = () => {
         }
     }, 300);
 }
+
+const animateCSS = (element, animationName, callback) => {
+    const node = document.querySelector(element)
+    node.classList.add('animated', animationName)
+
+    function handleAnimationEnd() {
+        console.log("fim")
+        node.classList.remove('animated', animationName)
+        node.removeEventListener('animationend', handleAnimationEnd)
+
+        node.classList.remove('animated', animationName)
+    }
+
+    node.addEventListener('animationend', handleAnimationEnd)
+}
 module.exports = {
-    animateOut
+    animateOut,
+    animateCSS
 }

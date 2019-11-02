@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import InputMask from 'react-input-mask';
 
 import './Form.css';
-const { animateOut } = require('./../../assets/js/animate')
+const { animateOut, animateCSS } = require('./../../assets/js/animate')
+require('animate.css')
 
 function Form() {
   const [nome, setNome] = useState("");
@@ -16,6 +17,15 @@ function Form() {
 
   const [telefone, setTelefone] = useState("");
   const [telefoneValid, setTelefoneValid] = useState(true);
+
+  useEffect(() => {
+    animateCSS('#root > div > div.form > h1', 'slideInDown')
+    animateCSS('.form-item-nome', 'slideInDown')
+    animateCSS('.form-item-email', 'slideInDown')
+    animateCSS('.form-item-cpf', 'slideInUp')
+    animateCSS('.form-item-telefone', 'slideInUp')
+    animateCSS('.form-item-buttons', 'slideInUp')
+  })
 
   const small = (valid, message) => {
     return valid ? <div></div> : <small className="validate-error">{message}</small>
@@ -81,7 +91,7 @@ function Form() {
       <h1>Lean Cadastro</h1>
       <form>
         <div className="form-itens">
-          <div className="form-item">
+          <div className="form-item form-item-nome">
             <label>Nome Completo</label>
             <input
               type='text'
@@ -90,7 +100,7 @@ function Form() {
             />
             {small(nomeValid, 'Digite um Nome válido!')}
           </div>
-          <div className="form-item">
+          <div className="form-item form-item-email">
             <label>E-mail</label>
             <input
               type='text'
@@ -99,7 +109,7 @@ function Form() {
             />
             {small(emailValid, 'Digite um E-mail válido!')}
           </div>
-          <div className="form-item">
+          <div className="form-item form-item-cpf">
             <label>CPF</label>
             <InputMask mask="999.999.999-99"
               maskChar={null}
@@ -108,7 +118,7 @@ function Form() {
               beforeMaskedValueChange={beforeMaskedValueChange} />
             {small(cpfValid, 'Digite um CPF válido!')}
           </div>
-          <div className="form-item">
+          <div className="form-item form-item-telefone">
             <label>Telefone</label>
             <InputMask mask="(99) 99999-9999"
               name="telefone"
@@ -117,7 +127,7 @@ function Form() {
               beforeMaskedValueChange={beforeMaskedValueChange} />
             {small(telefoneValid, 'Digite um Telefone válido!')}
           </div>
-          <div className="form-item">
+          <div className="form-item form-item-buttons">
             <div className="containerButtons">
               <div>
                 <button onClick={submitValidate}>Cadastrar</button>
