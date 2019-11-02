@@ -6,11 +6,9 @@ function Login() {
     <div className="container">
       <div className="outer-box">
         <div className="img-background"></div>
-      <div className="img-overlay">
+        <div className="img-overlay">
+        </div>
       </div>
-
-      </div>
-
     </div>
   );
 }

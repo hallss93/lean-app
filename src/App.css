@@ -27,3 +27,6 @@ body {
   margin: 0;
   font-family: "Roboto", Verdana, sans-serif;
 }
+.hidden {
+  display: none;
+}

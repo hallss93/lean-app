@@ -11,11 +11,26 @@
 .form-itens {
   display: grid;
 }
-.form-item{
+.form-item {
+  display: grid;
   padding: 20px;
 }
 h1,
 label {
   color: #999999;
   font-weight: 400;
+}
+label {
+  text-align: left;
+}
+.validate-error {
+  color: red;
+}
+input {
+  border-bottom: 2px solid #ddd;
+  border-top: none;
+  border-left: none;
+  height: 29px;
+  border-right: none;
+  font-size: 15px;
 }
